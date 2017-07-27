@@ -107,6 +107,8 @@ func xdgDataDir(home string) string {
 	dir := os.Getenv("XDG_DATA_HOME")
 	if "" == dir {
 		dir = path.Join(home, ".local", "share", "mm")
+	} else {
+		dir = path.Join(dir, "mm")
 	}
 	return dir
 }
@@ -115,6 +117,8 @@ func xdgConfigDir(home string) string {
 	dir := os.Getenv("XDG_CONFIG_HOME")
 	if "" == dir {
 		dir = path.Join(home, ".config", "mm")
+	} else {
+		dir = path.Join(dir, "mm")
 	}
 	return dir
 }
